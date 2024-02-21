@@ -5,7 +5,7 @@ you can generate cookies by loging in and by approving login by your facebook ap
 ```
 pkg install git
 pkg install python3
-git clone https://github.com/CyberArcenal/Fb-Cookies-Generator.git
+git clone https://github.com/CyberArcenal/Facebook-cookies-generator.git
 cd Fb-Cookies-Generator
 pip3 install -r requirements.txt
 python3 main.py
@@ -15,7 +15,7 @@ python3 main.py
 download and install python on python.org
 download and install git using chocolately or by website
 go on command promt/powershell
-git clone https://github.com/CyberArcenal/Fb-Cookies-Generator.git
+git clone https://github.com/CyberArcenal/Facebook-cookies-generator.git
 cd Fb-Cookies-Generator
 pip install -r requirements.txt
 python main.py
@@ -24,7 +24,7 @@ python main.py
 ```
 sudo apt install python3-pip
 sudo apt install git
-git clone https://github.com/CyberArcenal/Fb-Cookies-Generator.git
+git clone https://github.com/CyberArcenal/Facebook-cookies-generator.git
 cd Fb-Cookies-Generator
 pip install -r requirements.txt
 python3 main.py
