@@ -13,5 +13,5 @@ logo = blue+"""▄▄▄             █           █
 █   ███ █▄▄ █▄▄ █▄█ █▄█ █▄█ █▀▄"""+white
 ###############################################################
 session = requests.Session()
-DEBUG = True
+DEBUG = False
 ACCOUNT = ""
