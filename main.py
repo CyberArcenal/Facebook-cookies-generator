@@ -98,6 +98,8 @@ class Facebook:
                 print(65 * '\033[1;92m=')
                 RUN=False
                 display_cookies(account_name=ACCOUNT)
+                input()
+                main()
             time.sleep(4)
 
     def bg_check_approval(self, data, action_url):
@@ -112,21 +114,27 @@ class Facebook:
                     print(65 * '\033[1;92m=')
                     RUN=False
                     display_cookies(account_name=ACCOUNT)
+                    input()
+                    main()
             time.sleep(7)
         return
 
     def two_factor_mode(self):
+        global RUN
         action_url, data = create_form_2fa(self.page)
         print(f"\033[1;92m║ {green}Enter login code to continue{white}")
         print(
             f"\033[1;92m║ {green}You can approve login by other device.{white}")
-        while True:
+        while RUN:
             code = input(f"\033[1;92m║ {blue}input 6 digit code: {white}")
             if len(str(code)) > 5:
                 break
             else:
                 print(
                     f"\033[1;92m║ {red}Please enter login code to continue.{white}")
+        if RUN == False:
+            input()
+            main()
         data['approvals_code'] = code
         self.page: requests.Response = browser(url=action_url, data=data)
         title = get_page_title(page_text=self.page.text)
@@ -175,6 +183,8 @@ class Facebook:
             print(65 * '\033[1;92m=')
             RUN=False
             display_cookies(account_name=ACCOUNT)
+            input()
+            main()
 
         if "checkpoint" in self.page.url and "approvals_code" in self.page.text:
             print('\033[1;92m║ \033[1;93m2FA auth required:')
@@ -250,6 +260,8 @@ def Generate_Cookies():
 
 
 def main():
+    global RUN
+    RUN = True
     os.system(clr)
     print(logo)
     print(line)

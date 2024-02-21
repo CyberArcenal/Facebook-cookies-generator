@@ -1,6 +1,6 @@
 import sys
 import time
-
+import os
 from functions.logger import log, log_error
 from functions.ck import open_cookie_list, open_cookies, save_cookies
 from settings.br import open_headers, save_Referer
@@ -15,8 +15,12 @@ def wait():
         sys.stdout.flush()
         time.sleep(1)
 
-
+def create_log_dir():
+    try:os.mkdir("logs")
+    except OSError:pass
+    return
 def log_page(page: str):
+    create_log_dir()
     try:
         with open("logs/log_browser.html", 'a') as f:
             top = "====================PAGE START====================\n"
@@ -29,6 +33,7 @@ def log_page(page: str):
 
 
 def log_data(data: dict):
+    create_log_dir()
     try:
         with open("logs/log_data.txt", 'a') as f:
             f.write(str(data)+"\n")
